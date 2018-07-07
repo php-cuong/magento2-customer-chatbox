@@ -1,0 +1,39 @@
+<?php
+/**
+ * GiaPhuGroup Co., Ltd.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GiaPhuGroup.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.giaphugroup.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    PHPCuong
+ * @package     PHPCuong_CustomerChatbox
+ * @copyright   Copyright (c) 2018-2019 GiaPhuGroup Co., Ltd. All rights reserved. (http://www.giaphugroup.com/)
+ * @license     https://www.giaphugroup.com/LICENSE.txt
+ */
+
+/** @var $block \PHPCuong\CustomerChatbox\Block\FacebookMessenger **/
+$customerChatboxHelperData = $this->helper('PHPCuong\CustomerChatbox\Helper\Data');
+?>
+<!-- Facebook Messenger -->
+<?php if ($customerChatboxHelperData->getFacebookMessengerStatus()): ?>
+<script>
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/<?= $block->getLocate(); ?>/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- Your customer chat code -->
+<?= $customerChatboxHelperData->getFacebookMessengerChatCode(); ?>
+<?php endif; ?>
+<!-- End Facebook Messenger -->

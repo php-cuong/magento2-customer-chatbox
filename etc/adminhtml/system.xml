@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * GiaPhuGroup Co., Ltd.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GiaPhuGroup.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.giaphugroup.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    PHPCuong
+ * @package     PHPCuong_CustomerChatbox
+ * @copyright   Copyright (c) 2018-2019 GiaPhuGroup Co., Ltd. All rights reserved. (http://www.giaphugroup.com/)
+ * @license     https://www.giaphugroup.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="phpcuong_customer_chatbox" translate="label" type="text" sortOrder="600" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Customer Chatbox</label>
+            <tab>general</tab>
+            <resource>Magento_Backend::general</resource>
+            <group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="facebook_messenger_enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Display Facebook Messenger</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="facebook_messenger_customer_chat_code" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Customer Chat Code</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="phpcuong_customer_chatbox/general/facebook_messenger_enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
