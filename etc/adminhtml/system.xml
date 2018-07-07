@@ -39,6 +39,17 @@
                         <field id="phpcuong_customer_chatbox/general/facebook_messenger_enable">1</field>
                     </depends>
                 </field>
+                <field id="tawk_enable" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Display Tawk.to</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="tawk_widget_code" translate="label comment" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Widget Code</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="phpcuong_customer_chatbox/general/tawk_enable">1</field>
+                    </depends>
+                </field>
             </group>
         </section>
     </system>

@@ -24,6 +24,7 @@
     <body>
         <referenceContainer name="content">
             <block class="PHPCuong\CustomerChatbox\Block\FacebookMessenger" name="facebook.messenger" template="facebook/messenger.phtml" after="-" cacheable="false"/>
+            <block class="PHPCuong\CustomerChatbox\Block\FacebookMessenger" name="tawk.to.widget" template="tawk-to/widget.phtml" after="facebook.messenger" cacheable="false"/>
         </referenceContainer>
     </body>
 </page>
